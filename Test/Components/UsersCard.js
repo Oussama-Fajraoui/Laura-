@@ -67,7 +67,7 @@ const UsersCard = ({item})=> {
 
 const styles = StyleSheet.create({
     cardView: {
-        backgroundColor: "blue",
+        backgroundColor: "#fff",
         margin: width * 0.05,
         borderRadius: width * 0.03,
         shadowColor: "#000",

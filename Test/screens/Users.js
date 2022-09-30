@@ -31,7 +31,7 @@ const Users = ({navigation})=> {
 
 
     return (
-        <ScrollView>
+        <ScrollView style={{backgroundColor:'gray'}}>
             
         <FlatList data = {user.users}
         keyExtractor = {(items, index)=> 'key' + index}

@@ -7,7 +7,7 @@ const oneUser = ({navigation}) => {
     const [users,setUsers] = useState();
 
 
-    const handleAddUser = ()  {
+    const handleAddUser = ()  =>{
       setUsers([...users, add])
       setAdd(null)
     }
@@ -43,7 +43,7 @@ const oneUser = ({navigation}) => {
             />
             <TouchableOpacity
             style={styles.button}
-            onPress={()=>handleAddUser()}
+            // onPress={()=>handleAddUser()}
           >
           <Text style={styles.btnText}>Done</Text>
            </TouchableOpacity>
