@@ -1,17 +1,29 @@
 import React from "react";
-import { View, StyleSheet, Text, Image, Dimensions, Touchable, TouchableOpacity} from "react-native";
-
+import { View, StyleSheet, Text, Image, Dimensions, TouchableOpacity} from "react-native";
 const {width, height} = Dimensions.get('window')
 
 const UsersCard = ({item})=> {
+
+    const goTooneUserScreen = id => {
+       navigation.navigate('UsersCard', {id:id})
+    }
+
     return (
-        <TouchableOpacity style = {styles.cardView}>
-            <Image style={styles.image} source = {{uri: item.image}} />
-            <View style={{flexDirection: "row"}}>
-                <Text style={styles.title}>Firstname and last Name : </Text>
-            <Text style={styles.description}>{item.firstName}  </Text>
-            <Text style={styles.description}>{item.lastName}</Text>
+        <View>
+
+        <TouchableOpacity 
+        style = {styles.cardView}
+        // onPress={()=>goTooneUserScreen(id)}
+        >
+            <View>
+                
             </View>
+            <View style={{flexDirection: "row",  alignSelf:"center" }}>
+            <Text style={styles.Header}>{item.firstName}  </Text>
+            <Text style={styles.Header}>{item.lastName}</Text>
+            </View>
+            <Text></Text>
+            <Image style={styles.image} source = {{uri: item.image}} />
             <Text></Text>
             <View style = {{flexDirection:"row"}}>
             <Text style={styles.title}>Age : </Text>
@@ -29,7 +41,7 @@ const UsersCard = ({item})=> {
             </View>
             <Text></Text>
             <View style={{flexDirection:"row"}}>
-            <Text style={styles.title}>Phone Number : </Text>
+                <Text style={styles.title}>Phone Number : </Text>
             <Text style={styles.description}>{item.phone}</Text>
             </View>
             <Text></Text>
@@ -48,12 +60,14 @@ const UsersCard = ({item})=> {
             <Text style={styles.description}>{item.birthDate}</Text>
             </View>
         </TouchableOpacity>
+
+            </View>
     )
 }
 
 const styles = StyleSheet.create({
     cardView: {
-        backgroundColor: "white",
+        backgroundColor: "blue",
         margin: width * 0.05,
         borderRadius: width * 0.03,
         shadowColor: "#000",
@@ -68,7 +82,7 @@ const styles = StyleSheet.create({
         fontWeight: 'bold'
     },
     image: {
-        width: width,
+        width: width/1.2,
         height: height/2 ,
         marginLeft: width * 0.02,
         marginRight: width * 0.05,
@@ -77,7 +91,11 @@ const styles = StyleSheet.create({
     description: {
         color: 'gray',
         fontSize: 15
-    }
+    },
+    Header: {
+        fontSize: 20,
+        fontWeight:"bold"
+    },
 })
 
 export default UsersCard
